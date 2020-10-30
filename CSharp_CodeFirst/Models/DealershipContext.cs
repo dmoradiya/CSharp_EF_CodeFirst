@@ -76,7 +76,48 @@ namespace CSharp_CodeFirst.Models
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName(keyName);
 
-               
+                entity.HasData(
+                     new Vehicle()
+                     {
+                         ID = -1,
+                         ManufacturerID = -1,
+                         Colour = "Blue",
+                         Model = "Fusion",
+                         ModelYear = 2010
+                     },
+                     new Vehicle()
+                     {
+                         ID = -2,
+                         ManufacturerID = -1,
+                         Colour = "Black",
+                         Model = "Escape",
+                         ModelYear = 2014
+                     },
+                     new Vehicle()
+                     {
+                         ID = -3,
+                         ManufacturerID = -2,
+                         Colour = "Red",
+                         Model = "Cruze",
+                         ModelYear = 2012
+                     },
+                     new Vehicle()
+                     {
+                         ID = -4,
+                         ManufacturerID = -3,
+                         Colour = "Black",
+                         Model = "Ram",
+                         ModelYear = 2018
+                     },
+                     new Vehicle()
+                     {
+                         ID = -5,
+                         ManufacturerID = -3,
+                         Colour = "Blue",
+                         Model = "Charger",
+                         ModelYear = 2016
+                     }
+                     );
             });
         }
     }

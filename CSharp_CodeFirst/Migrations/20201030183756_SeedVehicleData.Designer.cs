@@ -2,14 +2,16 @@
 using CSharp_CodeFirst.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CSharp_CodeFirst.Migrations
 {
     [DbContext(typeof(DealershipContext))]
-    partial class DealershipContextModelSnapshot : ModelSnapshot
+    [Migration("20201030183756_SeedVehicleData")]
+    partial class SeedVehicleData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
