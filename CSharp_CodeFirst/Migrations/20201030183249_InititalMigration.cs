@@ -48,21 +48,6 @@ namespace CSharp_CodeFirst.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "manufacturer",
-                columns: new[] { "ID", "Name" },
-                values: new object[] { -1, "Ford" });
-
-            migrationBuilder.InsertData(
-                table: "manufacturer",
-                columns: new[] { "ID", "Name" },
-                values: new object[] { -2, "Chevrolet" });
-
-            migrationBuilder.InsertData(
-                table: "manufacturer",
-                columns: new[] { "ID", "Name" },
-                values: new object[] { -3, "Dodge" });
-
             migrationBuilder.CreateIndex(
                 name: "FK_Vehicle_Manufacturer",
                 table: "vehicle",

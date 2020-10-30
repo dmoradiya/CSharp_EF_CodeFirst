@@ -6,9 +6,7 @@ using System.Text;
 
 namespace CSharp_CodeFirst.Models
 {
-    // In-class practice: Fill out the manufacturer class to function as a basic model. Foreign key stuff not needed.
-
-    // Challenge: Implement the foreign key.
+    
     [Table("manufacturer")]
     class Manufacturer
     {

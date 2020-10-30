@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSharp_CodeFirst.Migrations
 {
     [DbContext(typeof(DealershipContext))]
-    [Migration("20201030181654_InititalMigration")]
+    [Migration("20201030183249_InititalMigration")]
     partial class InititalMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,23 +32,6 @@ namespace CSharp_CodeFirst.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("manufacturer");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = -1,
-                            Name = "Ford"
-                        },
-                        new
-                        {
-                            ID = -2,
-                            Name = "Chevrolet"
-                        },
-                        new
-                        {
-                            ID = -3,
-                            Name = "Dodge"
-                        });
                 });
 
             modelBuilder.Entity("CSharp_CodeFirst.Models.Vehicle", b =>

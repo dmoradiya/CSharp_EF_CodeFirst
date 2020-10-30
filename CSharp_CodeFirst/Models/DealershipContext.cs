@@ -34,31 +34,31 @@ namespace CSharp_CodeFirst.Models
                 entity.Property(e => e.Name)
                 .HasCharSet("utf8mb4")
                 .HasCollation("utf8mb4_general_ci");
-
+               
                 entity.HasData(
-                    new Manufacturer()
-                    {
-                        ID = -1,
-                        Name = "Ford"
-                    },
-                    new Manufacturer()
-                    {
-                        ID = -2,
-                        Name = "Chevrolet"
-                    },
-                    new Manufacturer()
-                    {
-                        ID = -3,
-                        Name = "Dodge"
-                    }
-                );
+                   new Manufacturer()
+                   {
+                       ID = -1,
+                       Name = "Ford"
+                   },
+                   new Manufacturer()
+                   {
+                       ID = -2,
+                       Name = "Chevrolet"
+                   },
+                   new Manufacturer()
+                   {
+                       ID = -3,
+                       Name = "Dodge"
+                   }
+               );
+
             });
             modelBuilder.Entity<Vehicle>(entity =>
             {
                 string keyName = "FK_" + nameof(Vehicle) +
                     "_" + nameof(Manufacturer);
 
-                // These SHOULD be set automatically. If you want to play around with it by removing these and verify this version of EF works that way, feel free. 
                 entity.Property(e => e.Model)
                 .HasCharSet("utf8mb4")
                 .HasCollation("utf8mb4_general_ci");
@@ -76,8 +76,7 @@ namespace CSharp_CodeFirst.Models
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName(keyName);
 
-                // In-class Practice 2:
-                // Add seed data for 5 vehicles similarly to the manufacturers above.
+               
             });
         }
     }
