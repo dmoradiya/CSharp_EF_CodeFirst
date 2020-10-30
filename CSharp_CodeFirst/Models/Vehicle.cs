@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace CSharp_CodeFirst.Model
+namespace CSharp_CodeFirst.Models
 {
     [Table("vehicle")]
     class Vehicle
@@ -13,18 +13,21 @@ namespace CSharp_CodeFirst.Model
         [Column(TypeName = "int(10)")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-        
-        [Column(TypeName = "varchar(30)")]
-        public int Manufacturer { get; set; }
-        [Required]
+
+        [Column(TypeName = "int(10)")]
+        public int ManufacturerID { get; set; }
+
         [Column(TypeName = "varchar(30)")]
         public string Model { get; set; }
+
         [Column(TypeName = "int(10)")]
         public int ModelYear { get; set; }
-        [Required]
+
         [Column(TypeName = "varchar(30)")]
         public string Colour { get; set; }
 
-        
+        [ForeignKey(nameof(ManufacturerID))]
+        [InverseProperty(nameof(Models.Manufacturer.Vehicles))]
+        public virtual Manufacturer Manufacturer { get; set; }
     }
 }
